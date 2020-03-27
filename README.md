@@ -13,8 +13,6 @@ This will hopefully land on a Learn guide, so it will have detailed installation
 
 ## Bugs
 
-[ ] I doesn't seem to download the JSON file from the API site from the PyPortal. I had to open the link with Firefox, and save it as ```local.txt```. The user agent for ``wget`` might be blocked, so the same could be happening with Python
-
 ## Attribution
 
 Heavily based on the PyPortal Weather Station from the [Learn Guide](https://learn.adafruit.com/pyportal-weather-station) from Adafruit.
