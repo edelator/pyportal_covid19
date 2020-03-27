@@ -13,14 +13,11 @@ except ImportError:
     print("WiFi secrets are kept in secrets.py, please add them there!")
     raise
 
-# Use cityname, country code where countrycode is ISO3166 format.
-# E.g. "New York, US" or "London, GB"
-LOCATION = "costa rica"
+# Use country
+LOCATION = "usa"
 
 # Set up where we'll be fetching data from
-DATA_SOURCE = "https://corona.lmao.ninja/v2/historical/"+LOCATION
-#DATA_SOURCE = "http://api.openweathermap.org/data/2.5/weather?q="+LOCATION
-# You'll need to get a token from openweather.org, looks like 'b6907d289e10d714a6e88b30761fae22'
+DATA_SOURCE = "https://corona.lmao.ninja/countries/"+LOCATION
 DATA_LOCATION = []
 
 
@@ -47,10 +44,10 @@ while True:
             continue
 
     # only query the weather every 10 minutes (and on first run)
-    if (not weather_refresh) or (time.monotonic() - weather_refresh) > 3600:
+    if (not weather_refresh) or (time.monotonic() - weather_refresh) > 600:
         try:
             value = pyportal.fetch()
-            print("Response is", value)
+            print("Querying corona stats")
             gfx.display_cases(value)
             weather_refresh = time.monotonic()
         except RuntimeError as e:

@@ -46,31 +46,31 @@ class Covid_Graphics(displayio.Group):
         self.country_text.color = 0xFFFFFF
         self._text_group.append(self.country_text)
 
-        self.deaths_text = Label(self.medium_font, max_glyphs=12)
+        self.deaths_text = Label(self.small_font, max_glyphs=25)
         self.deaths_text.x = 10
         self.deaths_text.y = 75
-        self.deaths_text.color = 0xFFFFFF
+        self.deaths_text.color = 0xFF0000
         self._text_group.append(self.deaths_text)
 
-        self.critical_text = Label(self.medium_font, max_glyphs=12)
+        self.critical_text = Label(self.small_font, max_glyphs=25)
         self.critical_text.x = 10
         self.critical_text.y = 105
-        self.critical_text.color = 0xFFFFFF
+        self.critical_text.color = 0xFFFF00
         self._text_group.append(self.critical_text)
 
-        self.recovered_text = Label(self.medium_font, max_glyphs=12)
+        self.recovered_text = Label(self.small_font, max_glyphs=25)
         self.recovered_text.x = 10
         self.recovered_text.y = 135
-        self.recovered_text.color = 0xFFFFFF
+        self.recovered_text.color = 0x00FF00
         self._text_group.append(self.recovered_text)
 
-        self.today_cases_text = Label(self.medium_font, max_glyphs=14)
+        self.today_cases_text = Label(self.small_font, max_glyphs=25)
         self.today_cases_text.x = 10
         self.today_cases_text.y = 165
         self.today_cases_text.color = 0xFFFFFF
         self._text_group.append(self.today_cases_text)
 
-        self.cases_text = Label(self.large_font, max_glyphs=20)
+        self.cases_text = Label(self.medium_font, max_glyphs=25)
         self.cases_text.x = 10
         self.cases_text.y = 195
         self.cases_text.color = 0xFFFFFF
