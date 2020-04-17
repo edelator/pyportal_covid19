@@ -31,7 +31,7 @@ pyportal = PyPortal(url=DATA_SOURCE,
 gfx = covid_graphics.Covid_Graphics(pyportal.splash, am_pm=True)
 
 localtile_refresh = None
-weather_refresh = None
+covid_refresh = None
 while True:
     # only query the online time once per hour (and on first run)
     if (not localtile_refresh) or (time.monotonic() - localtile_refresh) > 3600:
@@ -43,13 +43,13 @@ while True:
             print("Some error occured, retrying! -", e)
             continue
 
-    # only query the weather every 10 minutes (and on first run)
-    if (not weather_refresh) or (time.monotonic() - weather_refresh) > 600:
+    # only query the covid data every 5 minutes (and on first run)
+    if (not covid_refresh) or (time.monotonic() - covid_refresh) > 300:
         try:
             value = pyportal.fetch()
             print("Querying corona stats")
             gfx.display_cases(value)
-            weather_refresh = time.monotonic()
+            covid_refresh = time.monotonic()
         except RuntimeError as e:
             print("Some error occured, retrying! -", e)
             continue
